@@ -17,6 +17,12 @@ app.use(
 app.use(express.json());
 createSchemas();
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Server is running",
+  });
+});
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/projects", projectRoute);
 app.use("/api/v1/tasks", taskRoute);
