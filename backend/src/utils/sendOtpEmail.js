@@ -24,7 +24,7 @@ export const sendOtpEmail = async (name, email, otp) => {
       to: email,
       from: process.env.EMAIL_USER,
       subject: "Your One-Time Password (OTP)",
-      text: "",
+      text: `Your OTP is ${otp}. It will expire in 5 minutes.`,
       html: `
         <div style="font-family: Arial, sans-serif;">
           <h2>Hi ${name},</h2>
