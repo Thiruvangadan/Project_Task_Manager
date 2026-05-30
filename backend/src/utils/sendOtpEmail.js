@@ -1,45 +1,35 @@
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
-const createTransporter = () =>
-  nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-    connectionTimeout: 15000,
-    family: 4,
-  });
-
-export const verifyEmailService = async () => {
-  try {
-    const transporter = createTransporter();
-    await transporter.verify();
-    console.log("Email service is ready");
-  } catch (err) {
-    console.error("Email service error:", err);
-  }
-};
+sgMail.setApiKey(process.env.EMAIL_API);
 
 export const sendOtpEmail = async (name, email, otp) => {
   try {
-    const transporter = createTransporter();
+    // const transporter = createTransporter();
 
-    await transporter.sendMail({
-      from: `"From Task Manager" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "Your One-Time Password (OTP)",
-      html: `
-        <div style="font-family: Arial, sans-serif;">
-          <h2>Hi ${name},</h2>
-          <p>Your OTP is:</p>
-          <h1 style="letter-spacing: 4px;">${otp}</h1>
-          <p>This OTP will expire soon.</p>
-        </div>
-      `,
-    });
+    // await transporter.sendMail({
+    //   from: `"From Task Manager" <${process.env.EMAIL_USER}>`,
+    //   to: email,
+    //   subject: "Your One-Time Password (OTP)",
+    //   html: `
+    //     <div style="font-family: Arial, sans-serif;">
+    //       <h2>Hi ${name},</h2>
+    //       <p>Your OTP is:</p>
+    //       <h1 style="letter-spacing: 4px;">${otp}</h1>
+    //       <p>This OTP will expire soon.</p>
+    //     </div>
+    //   `,
+    // });
+    const msg = {
+      to: "tashwanth22@gmail.com",
+      from: process.env.EMAIL_USER,
+      subject: "Test Email",
+      text: "Hello! Email is working",
+    };
+
+    sgMail
+      .send(msg)
+      .then(() => console.log("Email sent"))
+      .catch((error) => console.error(error.response?.body || error));
 
     return true;
   } catch (error) {
