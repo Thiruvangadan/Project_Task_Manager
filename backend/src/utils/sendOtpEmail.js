@@ -1,3 +1,4 @@
+import "../config/env.config";
 import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(process.env.EMAIL_API);
