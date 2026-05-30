@@ -115,8 +115,7 @@ A full-stack project management application with OTP-based authentication, JWT s
 ## 1. Clone Repository
 
 ```bash
-git clone [https://github.com/your-username/your-repo.git](https://github.com/Thiruvangadan/Project_Task_Manager.git)
-cd your-repo
+git clone https://github.com/Thiruvangadan/Project_Task_Manager.git
 ```
 
 ---
@@ -159,7 +158,7 @@ npm start
 # 📱 APK
 
 Download APK here:
-👉 [https://drive.google.com/your-link](https://drive.google.com/your-link)
+👉 https://drive.google.com/drive/folders/1P-b9pdZ6C4xX6G4HoblF8NnUEwhZ4gRY?usp=sharing
 
 ---
 
