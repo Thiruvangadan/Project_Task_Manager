@@ -10,6 +10,7 @@ const createTransporter = () =>
       pass: process.env.EMAIL_PASS,
     },
     connectionTimeout: 10000,
+    family: 4,
   });
 
 export const verifyEmailService = async () => {

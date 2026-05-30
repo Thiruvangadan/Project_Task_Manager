@@ -51,7 +51,7 @@ export const registerUserController = async (req, res) => {
       ]);
     }
 
-    await sendOtpEmail(name, email, otp);
+    await sendOtpEmail(name, email, otp).catch(console.error);
 
     res.status(200).json({
       success: true,
@@ -159,7 +159,7 @@ export const loginUserController = async (req, res) => {
 
     await db.query(`UPDATE users SET otp = $1 WHERE email = $2`, [otp, email]);
 
-    await sendOtpEmail(result.rows[0].name, email, otp);
+    await sendOtpEmail(result.rows[0].name, email, otp).catch(console.error);
 
     res.status(200).json({
       success: true,
