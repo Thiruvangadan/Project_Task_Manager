@@ -21,10 +21,18 @@ export const sendOtpEmail = async (name, email, otp) => {
     //   `,
     // });
     const msg = {
-      to: "tashwanth22@gmail.com",
+      to: email,
       from: process.env.EMAIL_USER,
-      subject: "Test Email",
-      text: "Hello! Email is working",
+      subject: "Your One-Time Password (OTP)",
+      text: "",
+      html: `
+        <div style="font-family: Arial, sans-serif;">
+          <h2>Hi ${name},</h2>
+          <p>Your OTP is:</p>
+          <h1 style="letter-spacing: 4px;">${otp}</h1>
+          <p>This OTP will expire soon.</p>
+        </div>
+      `,
     };
 
     sgMail
