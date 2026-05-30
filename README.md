@@ -115,7 +115,7 @@ A full-stack project management application with OTP-based authentication, JWT s
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone [https://github.com/your-username/your-repo.git](https://github.com/Thiruvangadan/Project_Task_Manager.git)
 cd your-repo
 ```
 
