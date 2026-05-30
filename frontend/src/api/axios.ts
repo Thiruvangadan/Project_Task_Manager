@@ -3,7 +3,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const API = axios.create({
-  baseURL: "http://192.168.20.12:5000/api/v1",
+  baseURL: "https://project-task-manager-1hfd.onrender.com/api/v1",
 });
 
 API.interceptors.request.use(
