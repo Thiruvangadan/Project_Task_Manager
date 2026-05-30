@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+logs
+*.log
+
+# Build folders
+dist/
+build/
+
+# Expo
+frontend/.expo/
+frontend/.expo-shared/
+
+# EAS
+frontend/*.apk
+frontend/*.aab
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
